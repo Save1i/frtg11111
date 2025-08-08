@@ -37,18 +37,22 @@ const Form = () => {
         let checkbox = [];
 
         for (let i = 0; i < numOfInputs; i++) {
-            input.push(createElement('input', {className: "new-input", key:`input-${i}`}))
+            input.push(createElement('input', {className: styles["new-input"], key:`input-${i}`}))
         }
 
         for (let i = 0; i < numOftextareas; i++) {
-            textarea.push(createElement('textarea', {className: "new-textarea", key:`textarea-${i}`}))
+            textarea.push(createElement('textarea', {className: styles["new-textarea"], key:`textarea-${i}`}))
         }
 
         for (let i = 0; i < numOfcheckboxes; i++) {
-            checkbox.push(createElement("input", { type: "checkbox", className: "new-checkbox", key: `checkbox-${i}`}))
+            checkbox.push(createElement("input", { type: "checkbox", className: styles["new-checkbox"], key: `checkbox-${i}`}))
         }
 
-        const form = createElement('form', {className: styles['new-form']}, ...input, ...textarea, ...checkbox)
+        const inputContainer = createElement("div", {className: styles["input-container"]}, ...input)
+        const textareaContainer = createElement("div", {className: styles["textarea-container"]}, ...textarea)
+        const checkboxContainer = createElement("div", {className: styles["checkbox-container"]}, ...checkbox)
+
+        const form = createElement('form', {className: styles["new-form"]}, inputContainer, textareaContainer, checkboxContainer)
         return form;
     }
 
