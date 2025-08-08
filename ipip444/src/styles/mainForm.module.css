@@ -1,0 +1,70 @@
+/* newForm.module.css */
+
+.form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__inputs,
+.form__textareas,
+.form__checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.input__label,
+.textarea__label,
+.checkbox__label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input,
+.textarea,
+.checkbox {
+  padding: 8px 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus,
+.checkbox:focus {
+  outline: none;
+  border-color: #3b82f6; /* синий оттенок */
+}
+
+/* Специально для чекбоксов — лучше использовать accent-color */
+.checkbox {
+  width: 100%;
+  max-width: 120px;
+  accent-color: #3b82f6; /* стиль галочки и рамки */
+  cursor: pointer;
+}
+
+/* Кнопка */
+.build__btn {
+  padding: 12px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.build__btn:hover {
+  background-color: #2563eb;
+}

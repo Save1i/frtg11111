@@ -69,20 +69,20 @@ const Form = () => {
 
     return (
         <div>
-        <form onSubmit={handleSubmit} className="form" id="form">
-            <div className="form__inputs">
-                <label htmlFor="inputs" id="inputs">input</label>
-                <input type="number" name="inputs" id="inputs" value={formData.inputs} onChange={handleChange}/>
+        <form onSubmit={handleSubmit} className={styles.form} id="form">
+            <div className={styles.form__inputs}>
+                <label className={styles["input__label"]} htmlFor="inputs" id="inputs">input</label>
+                <input className={styles["input"]} type="number" name="inputs" id="inputs" value={formData.inputs} onChange={handleChange}/>
             </div>
-            <div className="form__textareas">
-                <label htmlFor="textareas" id="textareas">textarea</label>
-                <input type="number" name="textareas" id="textareas" value={formData.textareas} onChange={handleChange}/>
+            <div className={styles.form__textareas}>
+                <label className={styles["textarea__label"]} htmlFor="textareas" id="textareas">textarea</label>
+                <input className={styles["textarea"]} type="number" name="textareas" id="textareas" value={formData.textareas} onChange={handleChange}/>
             </div>
-            <div className="form__checkboxes">
-                <label htmlFor="checkboxes" id="checkboxes">checkbox</label>
-                <input type="number" name="checkboxes" id="checkboxes" value={formData.checkboxes} onChange={handleChange}/>
+            <div className={styles.form__checkboxes}>
+                <label className={styles["checkbox__label"]} htmlFor="checkboxes" id="checkboxes">checkbox</label>
+                <input className={styles["checkbox"]} type="number" name="checkboxes" id="checkboxes" value={formData.checkboxes} onChange={handleChange}/>
             </div>
-            <button type="submit">Build</button>
+            <button type="submit" className={styles.build__btn}>Build</button>
         </form>
         <div className={styles.container}>
             {generatedForm}

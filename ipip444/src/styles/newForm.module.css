@@ -69,3 +69,52 @@
 .container {
   margin-top: 30px;
 }
+
+
+/* FORM */
+
+.form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__inputs,
+.form__textareas,
+.form__checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.input,
+.textarea,
+.checkbox {
+  padding: 8px 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+}
+
+.input:focus,
+.textarea:focus,
+.checkbox:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+.build__btn {
+  padding: 12px;
+  background-color: #aaa;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
