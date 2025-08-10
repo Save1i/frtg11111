@@ -1,6 +1,7 @@
 import { createElement, JSX, useState } from "react";
 import React from 'react';
 import styles from "../styles/newForm.module.css"
+import BackBtn from "../buttons/BackBtn";
 
 const Form = () => {
 
@@ -31,6 +32,12 @@ const Form = () => {
         const numOfInputs = Number(inputs)
         const numOftextareas = Number(textareas)
         const numOfcheckboxes = Number(checkboxes)
+
+        if(numOfInputs === 0 && numOftextareas === 0 && numOfcheckboxes === 0) {
+            const text = createElement("p", {className: styles.form__text}, "Empty form")
+            const form = createElement('form', {className: styles["new-form"]}, text)
+            return form
+        }
 
         let input = [];
         let textarea = [];
@@ -69,18 +76,19 @@ const Form = () => {
 
     return (
         <div>
+        <BackBtn/>
         <form onSubmit={handleSubmit} className={styles.form} id="form">
             <div className={styles.form__inputs}>
                 <label className={styles["input__label"]} htmlFor="inputs" id="inputs">input</label>
-                <input className={styles["input"]} type="number" name="inputs" id="inputs" value={formData.inputs} onChange={handleChange}/>
+                <input className={styles["input"]} type="number" min={0} name="inputs" id="inputs" value={formData.inputs} onChange={handleChange}/>
             </div>
             <div className={styles.form__textareas}>
                 <label className={styles["textarea__label"]} htmlFor="textareas" id="textareas">textarea</label>
-                <input className={styles["textarea"]} type="number" name="textareas" id="textareas" value={formData.textareas} onChange={handleChange}/>
+                <input className={styles["textarea"]} type="number" min={0} name="textareas" id="textareas" value={formData.textareas} onChange={handleChange}/>
             </div>
             <div className={styles.form__checkboxes}>
                 <label className={styles["checkbox__label"]} htmlFor="checkboxes" id="checkboxes">checkbox</label>
-                <input className={styles["checkbox"]} type="number" name="checkboxes" id="checkboxes" value={formData.checkboxes} onChange={handleChange}/>
+                <input className={styles["checkbox"]} type="number" min={0} name="checkboxes" id="checkboxes" value={formData.checkboxes} onChange={handleChange}/>
             </div>
             <button type="submit" className={styles.build__btn}>Build</button>
         </form>
